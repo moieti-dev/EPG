@@ -65,10 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const formData = new FormData(form);
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
+            // Netlify requirement: add form-name
+            const body = new URLSearchParams(formData).toString();
+
+            const response = await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: body + "&form-name=onboarding-fitness"
             });
 
             if (response.ok) {
