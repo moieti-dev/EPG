@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>METODO LIFESTYLE EPG | ONBOARDING</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="Método Lifestyle EPG" class="logo">
+            </div>
+        </header>
+
+        <main>
+            <form id="fitness-form" class="multi-step-form" action="https://formspree.io/f/xaqvyryg" method="POST">
+                
+                <!-- Step 1 -->
+                <div class="form-step active" data-step="1">
+                    <h2>01 INFORMACIÓN</h2>
+                    <p class="step-desc">IDENTIFÍCATE</p>
+                    <div class="input-group">
+                        <label>NOMBRE COMPLETO</label>
+                        <input type="text" name="nombre" placeholder="TU NOMBRE" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>FECHA NACIMIENTO</label>
+                            <input type="date" name="fecha-nacimiento" required>
+                        </div>
+                        <div class="input-group">
+                            <label>EDAD</label>
+                            <input type="number" name="edad" placeholder="00" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>TELÉFONO</label>
+                        <input type="tel" name="telefono" placeholder="+34" required>
+                    </div>
+                    <div class="input-group">
+                        <label>EMAIL</label>
+                        <input type="email" name="email" placeholder="EMAIL" required>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-next">CONTINUAR</button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="form-step" data-step="2">
+                    <h2>02 OBJETIVOS</h2>
+                    <p class="step-desc">¿QUÉ BUSCAS?</p>
+                    <div class="checkbox-grid">
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="objetivos" value="perdida-peso" hidden>
+                            <span class="card-content">PÉRDIDA DE PESO</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="objetivos" value="ganancia-muscular" hidden>
+                            <span class="card-content">MÚSCULO</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="objetivos" value="resistencia" hidden>
+                            <span class="card-content">RESISTENCIA</span>
+                        </label>
+                        <label class="checkbox-card">
+                            <input type="checkbox" name="objetivos" value="tonificacion" hidden>
+                            <span class="card-content">TONIFICACIÓN</span>
+                        </label>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label>ESPECIFICA</label>
+                        <textarea name="desc-objetivos" rows="2" placeholder="TUS METAS..."></textarea>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-prev">ATRÁS</button>
+                        <button type="button" class="btn btn-next">CONTINUAR</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="form-step" data-step="3">
+                    <h2>03 SALUD</h2>
+                    <p class="step-desc">TU ESTADO ACTUAL</p>
+                    <div class="input-group">
+                        <label>CONDICIÓN MÉDICA / MEDICAMENTOS / LESIONES</label>
+                        <textarea name="salud" rows="4" placeholder="DESCRIBE TU ESTADO DE SALUD ACTUAL..."></textarea>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-prev">ATRÁS</button>
+                        <button type="button" class="btn btn-next">CONTINUAR</button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="form-step" data-step="4">
+                    <h2>04 HÁBITOS</h2>
+                    <p class="step-desc">¿DÓNDE ESTÁS?</p>
+                    <div class="checkbox-grid">
+                        <label class="radio-card">
+                            <input type="radio" name="nivel" value="principiante" hidden>
+                            <span>PRINCIPIANTE</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="nivel" value="intermedio" hidden>
+                            <span>INTERMEDIO</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="nivel" value="avanzado" hidden>
+                            <span>AVANZADO</span>
+                        </label>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-prev">ATRÁS</button>
+                        <button type="button" class="btn btn-next">CONTINUAR</button>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="form-step" data-step="5">
+                    <h2>05 COMPROMISO</h2>
+                    <p class="step-desc">EL PRECIO DEL ÉXITO</p>
+                    <div class="input-group">
+                        <label>NIVEL DE COMPROMISO (1-10)</label>
+                        <input type="number" name="compromiso" min="1" max="10" placeholder="10">
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-prev">ATRÁS</button>
+                        <button type="submit" class="btn btn-submit">FORJAR CAMBIO</button>
+                    </div>
+                </div>
+
+                <!-- Success -->
+                <div class="form-step" id="success-step">
+                    <div class="success-content">
+                        <h2>ÉXITO</h2>
+                        <p class="step-desc">RECIBIRÁS NOTICIAS PRONTO</p>
+                        <button type="button" class="btn btn-prev" onclick="location.reload()">VOLVER</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <p class="footer-text">© 2024 MÉTODO LIFESTYLE EPG | TODOS LOS DERECHOS RESERVADOS</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
